@@ -9,6 +9,12 @@ vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.opt.spelllang = { "en", "pt_br", "fr" }
 
+-- show special characters
+vim.cmd [[
+  set invlist
+]]
+vim.opt.listchars = "tab:|-,trail:.,extends:>,precedes:<"
+
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
