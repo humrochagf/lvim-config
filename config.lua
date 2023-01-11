@@ -43,6 +43,9 @@ lvim.keys.normal_mode["<leader>rr"] = "<Plug>RestNvim"
 lvim.keys.normal_mode["<leader>rp"] = "<Plug>RestNvimPreview"
 lvim.keys.normal_mode["<leader>rl"] = "<Plug>RestNvimLast"
 
+-- Line wrap
+lvim.keys.normal_mode["<leader>sw"] = ":setlocal wrap!<cr>"
+
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
