@@ -34,16 +34,22 @@ lvim.keys.insert_mode["jj"] = "<C-c>"
 -- Undo
 lvim.keys.normal_mode["U"] = "<C-r>"
 
--- Toggle spellcheck
-lvim.keys.normal_mode["<leader>sl"] = ":setlocal spell!<cr>"
+-- Mapping groups
+lvim.builtin.which_key.mappings[","] = {
+  name = "Custom commands",
+  s = { ":setlocal spell!<cr>", "Toggle spellcheck" },
+  w = { ":setlocal wrap!<cr>", "Toggle word wrap" },
+}
 
--- Line wrap
-lvim.keys.normal_mode["<leader>sw"] = ":setlocal wrap!<cr>"
-
--- Rest-nvim
-lvim.keys.normal_mode["<leader>rr"] = "<Plug>RestNvim"
-lvim.keys.normal_mode["<leader>rp"] = "<Plug>RestNvimPreview"
-lvim.keys.normal_mode["<leader>rl"] = "<Plug>RestNvimLast"
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Diagnostics",
+  t = { "<cmd>TroubleToggle<cr>", "trouble" },
+  w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+  d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+  q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+  l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+  r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+}
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -116,14 +122,14 @@ lvim.builtin.treesitter.auto_install = true
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 -- lvim.plugins = {
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
 -- }
 
 lvim.plugins = {
   "catppuccin/nvim",
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  },
   {
     "rest-nvim/rest.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
