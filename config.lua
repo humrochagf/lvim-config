@@ -9,12 +9,6 @@ vim.opt.tabstop = 2
 vim.opt.relativenumber = true
 vim.opt.spelllang = { "en", "pt_br", "fr" }
 
--- show special characters
-vim.cmd [[
-  set invlist
-]]
-vim.opt.listchars = "tab:|-,trail:.,extends:>,precedes:<"
-
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
@@ -25,26 +19,31 @@ lvim.format_on_save = {
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
+-- show special characters
+vim.cmd [[
+  set invlist
+]]
+vim.opt.listchars = "tab:|-,trail:.,extends:>,precedes:<"
+
 -- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
--- add your own keymapping
-
--- Undo
-lvim.keys.normal_mode["U"] = "<C-r>"
 
 -- Quick insert to normal mode
 lvim.keys.insert_mode["jj"] = "<C-c>"
 
+-- Undo
+lvim.keys.normal_mode["U"] = "<C-r>"
+
 -- Toggle spellcheck
 lvim.keys.normal_mode["<leader>sl"] = ":setlocal spell!<cr>"
+
+-- Line wrap
+lvim.keys.normal_mode["<leader>sw"] = ":setlocal wrap!<cr>"
 
 -- Rest-nvim
 lvim.keys.normal_mode["<leader>rr"] = "<Plug>RestNvim"
 lvim.keys.normal_mode["<leader>rp"] = "<Plug>RestNvimPreview"
 lvim.keys.normal_mode["<leader>rl"] = "<Plug>RestNvimLast"
-
--- Line wrap
-lvim.keys.normal_mode["<leader>sw"] = ":setlocal wrap!<cr>"
 
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
@@ -58,7 +57,6 @@ lvim.keys.normal_mode["<leader>sw"] = ":setlocal wrap!<cr>"
 lvim.colorscheme = "catppuccin"
 lvim.builtin.lualine.options.theme = "catppuccin"
 
--- After changing plugin config exit and reopen LunarVim, Run :PackerSync
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
@@ -123,11 +121,12 @@ lvim.builtin.treesitter.auto_install = true
 --       cmd = "TroubleToggle",
 --     },
 -- }
+
 lvim.plugins = {
   "catppuccin/nvim",
   {
     "rest-nvim/rest.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("rest-nvim").setup({
         -- Open request results in a horizontal split
