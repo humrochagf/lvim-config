@@ -74,6 +74,24 @@ lvim.builtin.treesitter.auto_install = true
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
+-- Language servers
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "c",
+  "cpp",
+  "go",
+  "http",
+  "javascript",
+  "json",
+  "lua",
+  "python",
+  "toml",
+  "typescript",
+  "css",
+  "rust",
+  "yaml",
+}
+
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
 -- --- disable automatic installation of servers
@@ -126,6 +144,7 @@ lvim.builtin.treesitter.auto_install = true
 
 lvim.plugins = {
   "catppuccin/nvim",
+  "sheerun/vim-polyglot",
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
