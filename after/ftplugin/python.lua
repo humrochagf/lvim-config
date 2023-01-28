@@ -9,4 +9,5 @@ linters.setup {
   { command = "ruff", filetypes = { "python" } },
   { command = "flake8", filetypes = { "python" } },
   { command = "codespell", filetypes = { "python" } },
+  { command = "mypy", filetypes = { "python" } },
 }
