@@ -13,7 +13,7 @@ vim.opt.spelllang = { "en", "pt_br", "fr" }
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = "*.lua",
+  pattern = "*.lua,*.py",
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
