@@ -8,7 +8,7 @@
 -- Spelling
 vim.opt.spelllang = { "en", "pt_br", "fr" }
 
--- Show special characters 
+-- Show special characters
 vim.cmd [[
   set invlist
 ]]
@@ -19,6 +19,9 @@ vim.opt.listchars = "tab:|-,trail:.,extends:>,precedes:<"
 -- Theme selection
 lvim.colorscheme = "catppuccin"
 lvim.builtin.lualine.options.theme = "catppuccin"
+
+-- Format on save
+lvim.format_on_save.enabled = true
 
 -- ### Mappings ### --
 
@@ -40,7 +43,7 @@ lvim.builtin.which_key.mappings[","] = {
 
 -- ### Language Configs ### --
 
--- Language servers 
+-- Language servers
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
