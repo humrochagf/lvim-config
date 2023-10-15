@@ -1,0 +1,6 @@
+# spellcheck
+*.spl
+*.sug
+
+# lvim lockfile
+lazy-lock.json
