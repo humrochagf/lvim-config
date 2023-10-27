@@ -31,7 +31,7 @@ lvim.keys.insert_mode["jj"] = "<C-c>"
 -- Undo
 lvim.keys.normal_mode["U"] = "<C-r>"
 
--- open terminal
+-- Open terminal
 lvim.builtin.terminal.open_mapping = "<C-t>"
 
 -- Mapping groups
@@ -65,4 +65,5 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.plugins = {
   "catppuccin/nvim",
+  "Vimjas/vim-python-pep8-indent",
 }
